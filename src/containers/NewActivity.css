@@ -1,0 +1,21 @@
+.NewActivity {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  width: 90%;
+}
+
+.NewActivity .form-container {
+  width: 90%;
+  display: inline-block;
+}
+
+.NewActivity form {
+    padding-bottom: 0.0em;
+  }
+  
+  .NewActivity form textarea {
+    height: 1em;
+    font-size: 0.5em;
+    padding-bottom: 0.1em;
+  }

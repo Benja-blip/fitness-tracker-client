@@ -2,6 +2,31 @@
   margin-top: 15px;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(27, 27, 27);
+  opacity: 1.0;
+}
+
+.App .navbar {
+  background-color: rgb(226, 2, 2);
+  border-radius: 0.5em;
+  border: solid rgb(44, 44, 44);
+}
+
 .App .navbar-brand {
   font-weight: bold;
+  color: rgb(44, 43, 43);
 }
+
+#signup {
+  font-weight: bold;
+  color: rgb(192, 189, 189);
+}
+
+#login {
+  font-weight: bold;
+  color: rgb(192, 189, 189);
+}
+

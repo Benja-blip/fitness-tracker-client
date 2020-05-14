@@ -1,13 +1,220 @@
+.Home {
+    background-color: transparent;
+    border-radius: 0.5em;
+    height: 32em;
+    width:100%;
+    display: inline-flex;
+}
+
+.Home .center-container {
+    background-color: rgb(226, 2, 2);
+    border-radius: 1em;
+    width: 47%;
+    margin: 0 auto;
+}
+
 .Home .lander {
-    padding: 80px 0;
+    margin: 2em auto;
     text-align: center;
+    background-color: rgb(226, 2, 2);
+    border-radius: 0.5em;
 }
 
 .Home .lander h1 {
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
+    color: rgb(27, 27, 27);
 }
 
 .Home .lander p {
-    color: #999;
+    color: rgb(192, 189, 189);
+}
+
+.Home .app-container {
+    margin: 2em auto;
+    width: 90.5%;
+}
+
+.Home .app-container .stopwatch {
+    width: 100%;
+    display: inline-flex;
+    margin: 0 auto;
+}
+
+.Home .app-container .numbers {
+    display: inline-flex;
+}
+
+#minutes {
+    background-color: rgb(22, 22, 22);
+    opacity: 0.95;
+    height: 9.5em;
+    width: 7.8em;
+    border-radius: 0.5em;
+    padding: .3em;
+    margin-top: .1em;
+    text-align: center;
+    border: solid rgb(43, 42, 42) 0.2em;
+}
+
+#colon {
+    background-color: transparent;
+    opacity: 0.95;
+    height: 9.5em;
+    width: 0.5em;
+    border-radius: 0.5em;
+    padding: 0.0em;
+    margin-top: .1em;
+    margin-left: 0.0em;
+    text-align: left;
+}
+
+#colon p {
+    color: rgb(22, 22, 22);
+    opacity: 0.9;
+    font-size: 6em;
+}
+
+#seconds {
+    background-color: rgb(22, 22, 22);
+    opacity: 0.95;
+    height: 9.5em;
+    width: 7.8em;
+    border-radius: 0.5em;
+    padding: .3em;
+    margin-top: .1em;
+    margin-left: 1em;
+    text-align: center;
+    border: solid rgb(43, 42, 42) 0.2em;
+}
+
+.Home .box p {
+    color: rgb(228, 226, 226);
+    font-size: 6em;
+}
+
+.Home .settings {
+    margin-left: 1%;
+}
+
+#top-button {
+    background-color: rgb(22, 22, 22);
+    opacity: 0.95;
+    height: 3em;
+    width: 12em;
+    border-radius: 0.5em;
+    padding: .3em;
+    margin-top: .1em;
+    margin-left: 1em;
+    text-align: center;
+    border: solid rgb(43, 42, 42) 0.2em;
+}
+#middle-button {
+    background-color: rgb(22, 22, 22);
+    opacity: 0.95;
+    height: 3em;
+    width: 12em;
+    border-radius: 0.5em;
+    padding: .3em;
+    margin-top: 0.2em;
+    margin-left: 1em;
+    text-align: center;
+    border: solid rgb(43, 42, 42) 0.2em;
+}
+#bottom-button {
+    background-color: rgb(22, 22, 22);
+    opacity: 0.95;
+    height: 3em;
+    width: 12em;
+    border-radius: 0.5em;
+    padding: .3em;
+    margin-top: 0.2em;
+    margin-left: 1em;
+    text-align: center;
+    border: solid rgb(43, 42, 42) 0.2em;
+}
+
+.Home .setting {
+    color: rgb(228, 226, 226);
+}
+
+.Home .activity-display {
+    background-color: rgb(22, 22, 22);
+    opacity: 0.95;
+    height: 9em;
+    width: 30.4em;
+    border-radius: 0.5em;
+    padding: .6em;
+    margin-top: 0.8em;
+    text-align: center;
+    border: solid rgb(43, 42, 42) 0.2em;
+}
+
+.Home .activity-display p {
+    color: rgb(184, 181, 181);
+    font-size: 1.5em;
+}
+
+.Home .right-container {
+    background-color: rgb(226, 2, 2);
+    border-radius: 1em;
+    width: 25%;
+}
+
+.Home .right-container .settings-panel {
+    background-color: rgb(22, 22, 22);
+    opacity: 0.95;
+    width: 90%;
+    height: 94%;
+    max-height: 94%em;
+    margin: auto;
+    overflow-y: auto;
+    margin-top: 1em;
+    border-radius: 1em;
+}
+
+.Home .right-container .settings-panel button {
+    background-color: rgb(26, 25, 25);
+    opacity: 0.95;
+    height: 2em;
+    margin-left: 3%;
+    margin-top: 3%;
+    width: 95%;
+    border-radius: 1em;
+    padding: 0em;
+    text-align: center;
+    border: solid rgb(43, 42, 42) 0.1em;
+    color: rgb(221, 219, 219);
+}
+
+.Home .left-container {
+    background-color: rgb(226, 2, 2);
+    border-radius: 1em;
+    width: 25%;
+}
+
+.Home .left-container .information-panel {
+    background-color: rgb(22, 22, 22);
+    opacity: 0.95;
+    width: 90%;
+    height: 94%;
+    max-height: 94%em;
+    margin: auto;
+    overflow-y: auto;
+    margin-top: 1em;
+    border-radius: 1em;
+}
+
+.Home .left-container .information-panel button {
+    background-color: rgb(39, 39, 39);
+    opacity: 0.85;
+    height: 2em;
+    margin-left: 3%;
+    margin-top: 3%;
+    width: 95%;
+    border-radius: 1em;
+    padding: 0em;
+    text-align: center;
+    border: solid rgb(17, 17, 17) 0.1em;
+    color: rgb(221, 219, 219);
 }

@@ -1,0 +1,7 @@
+.activities {
+    text-align: center;
+}
+
+.activities .list-container {
+    display: inline-block;
+}
