@@ -1,21 +1,24 @@
-.NewActivity {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  text-align: center;
-  width: 90%;
-}
-
 .NewActivity .form-container {
-  width: 90%;
   display: inline-block;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  width: 90%;
 }
 
-.NewActivity form {
-    padding-bottom: 0.0em;
-  }
-  
-  .NewActivity form textarea {
-    height: 1em;
-    font-size: 0.5em;
-    padding-bottom: 0.1em;
-  }
+input {
+    background-color: transparent;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    height: 1.2em;
+    margin-top: 1em;
+    margin-left: 1.5em;
+    width: 100%;
+    /* border-radius: 0.2em; */
+}
+
+.input-div {
+  margin-bottom: 1em;
+}

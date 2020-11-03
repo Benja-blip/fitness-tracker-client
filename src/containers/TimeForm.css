@@ -7,4 +7,24 @@
     margin-left: 3%;
     margin-top: 3%;
     margin-right: 3%;
+    color: rgb(199, 198, 198);
+}
+
+input {
+    background-color: transparent;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    height: 1.2em;
+    margin-top: 0.01em;
+    margin-left: 0.5em;
+    width: 60%;
+    /* border-radius: 0.2em; */
+}
+
+label {
+    margin-top: 1em;
+    margin-bottom: 0.001em;
+    width: 100%;
 }

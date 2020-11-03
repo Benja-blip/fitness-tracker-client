@@ -1,27 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { ListGroup, ListGroupItem} from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { API } from 'aws-amplify';
-import "./EditActivity.css";
+import "./ViewActivity.css";
 
-export default function EditActivity(props) {
+export default function ViewActivity(props) {
     const [activities, setActivities] = useState([]);
-    //const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
+    const [message, setMessage] = useState("")
+
+    useEffect(() => {
+        if (isLoading) {
+            setMessage("Loading...")
+        }
+    }, [isLoading])
 
     useEffect(() => {
         async function onload() {
             if(!props.isAuthenticated) {
                 return;
             }
-
             try {
+                setIsLoading(true)
                 const activities = await loadActivities();
                 setActivities(activities);
+                setIsLoading(false);
             } catch(e) {
                 console.log(e);
             }
-
-            //setIsLoading(false);
         }
 
         onload();
@@ -34,12 +39,17 @@ export default function EditActivity(props) {
     function renderActivitiesList(activities) {
         return [{}].concat(activities).map((activity, i) =>
             i !== 0 && (
-                <LinkContainer key={activity.title} to={`/activities/${activity.noteId}`}>
-                    <ListGroupItem header={activity.title}>
+                <LinkContainer key={activity.title} to={`/activities/${activity.activityId}`}>
+                    <button id="activity-button">
+                        <div id="title-div">
+                            {activity.title}
+                        </div>
+                        <div>
                         {"Type: " + activity.type}
                         {"  |  Routine: " + activity.routine}
-                        {"  |  Comment: " + activity.comment}
-                    </ListGroupItem>
+                        </div>
+                        {"Comment: " + activity.comment}
+                    </button>
                 </LinkContainer>
             )
         );
@@ -47,10 +57,11 @@ export default function EditActivity(props) {
 
     return (
         <div className="activities">
+            {isLoading && message}
             <div className="list-container">
-                <ListGroup>
+                <div id="actual-list">
                     {props.isAuthenticated && renderActivitiesList(activities)}
-                </ListGroup>
+                </div>
             </div>
         </div>
     );

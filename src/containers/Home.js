@@ -2,10 +2,11 @@ import React from "react";
 import "./Home.css";
 import Toggle from '../components/Toggle';
 import NewActivity from './NewActivity';
-import EditActivity from "./EditActivity";
+import ViewActivity from "./ViewActivity";
 import TimeForm from "./TimeForm";
 import Timer from "../components/Timer";
-import {startCountdown} from "../components/Actions";
+import ActivityDisplay from "../components/ActivityDisplay"
+import {startCountdown, resetCountdown} from "../components/Actions";
 import {useDispatch} from "react-redux";
 
 
@@ -25,18 +26,16 @@ export default function Home(props) {
           <h1>Remind</h1>
           <p>A simple fitness tracker app</p>
         </div>
-        <div className="app-container">
+        <div className="app-container"  {...props}>
           <div className="stopwatch">
             <Timer/>
             <div className="settings">
               <button onClick={() => {dispatch(startCountdown())}} className="setting" id="top-button">Start</button>
               <button onClick={() => {dispatch(startCountdown())}} className="setting" id="middle-button">Pause</button>
-              <button className="setting" id="bottom-button">Reset</button>
+              <button onClick={() => {dispatch(resetCountdown())}} className="setting" id="bottom-button">Reset</button>
             </div>
           </div>
-          <div className="activity-display">
-            <p>Activity will display here at next break</p>
-          </div>
+          <ActivityDisplay {...props}/>
         </div>
       </div>
       <div className="right-container">
@@ -53,7 +52,7 @@ export default function Home(props) {
             {({ on, toggle }) => (
               <div>
                 <button onClick={toggle}>View/Edit Activities</button>
-                {on && <EditActivity {...props} />}
+                {on && <ViewActivity {...props} />}
               </div>
             )}
           </Toggle>

@@ -6,7 +6,8 @@ import Login from "./containers/Login";
 import NotFound from "./containers/NotFound";
 import Signup from "./containers/Signup";
 import NewActivity from "./containers/NewActivity";
-import EditActivity from "./containers/EditActivity";
+import ViewActivity from "./containers/ViewActivity";
+import Activities from "./containers/Activities";
 import TimeForm from "./containers/TimeForm";
 
 export default function Routes({ appProps }) {
@@ -16,7 +17,10 @@ export default function Routes({ appProps }) {
       <AppliedRoute path="/login" exact component={Login} appProps={appProps} />
       <AppliedRoute path="/signup" exact component={Signup} appProps={appProps} />
       <AppliedRoute path="/activities/new" exact component={NewActivity} appProps={appProps} />
-      <AppliedRoute path="/" exact component={EditActivity} appProps={appProps} />
+      <Route exact path="/activities/:id">
+        <Activities />
+      </Route>
+      <AppliedRoute path="/" exact component={ViewActivity} appProps={appProps} />
       <AppliedRoute path="/" exact component={TimeForm} appProps={appProps} />
       <Route component={NotFound} />
     </Switch>

@@ -10,8 +10,38 @@ export function pauseCountdown() {
     };
 }
 
-export function formIsFilled() {
+// export function formIsFilled() {
+//     return {
+//         type: 'FORM_IS_FILLED'
+//     };
+// }
+
+export function resetCountdown() {
     return {
-        type: 'FORM_IS_FILLED'
+        type: 'COUNTDOWN_IS_RESET'
     };
+}
+
+export function endWorkPeriod() {
+    return {
+        type: 'WORK_IS_OVER'
+    };
+}
+
+export function endRestPeriod() {
+    return {
+        type: 'REST_IS_OVER'
+    };
+}
+
+export function updateDb() {
+    return {
+        type: 'UPDATE_DB'
+    };
+}
+
+export function autoTransitionOn() {
+    return {
+        type: 'AUTO_IS_ON'
+    }
 }

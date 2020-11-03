@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FormGroup, FormControl } from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton";
 import "./NewActivity.css";
 import { API } from "aws-amplify";
@@ -23,6 +22,9 @@ export default function NewActivity(props) {
         try {
             await createActivity({ title, type, comment, routine });
             props.history.push("/");
+            setIsLoading(false);
+            setTitle("");
+            setType("");
         } catch(e) {
             console.log(e);
             setIsLoading(false);
@@ -38,54 +40,30 @@ export default function NewActivity(props) {
     return (
         <div className="NewActivity">
             <div className="form-container">
-            <form onSubmit={handleSubmit}>
-                <FormGroup controlId="title" bsSize="small">
-                    <FormControl
-                      value={title}
-                      rows="1"
-                      placeholder="Name (required)"
-                      componentClass="textarea"
-                      onChange={e => setTitle(e.target.value)}
-                    />
-                </FormGroup>
-                <FormGroup controlId="type" bsSize="small">
-                    <FormControl
-                      placeholder="Type (required)"
-                      rows="1"
-                      value={type}
-                      componentClass="textarea"
-                      onChange={e => setType(e.target.value)}
-                    />
-                </FormGroup>
-                <FormGroup controlId="comment" bsSize="small">
-                    <FormControl
-                      placeholder="Comment"
-                      rows="1"
-                      value={comment}
-                      componentClass="textarea"
-                      onChange={e => setComment(e.target.value)}
-                    />
-                </FormGroup>
-                <FormGroup controlId="routine" bsSize="small">
-                    <FormControl
-                      placeholder="Routine"
-                      rows="1"
-                      value={routine}
-                      componentClass="textarea"
-                      onChange={e => setRoutine(e.target.value)}
-                    />
-                </FormGroup>
-                <LoaderButton
-                  block
-                  type="submit"
-                  bsSize="small"
-                  bsStyle="primary"
-                  isLoading={isLoading}
-                  disabled={!validateForm()}
-                >
-                  Create
-                </LoaderButton>
-            </form>
+                <form onSubmit={handleSubmit}>
+                    <div className="input-div">
+                        <input value={title} onChange={e => setTitle(e.target.value)} placeholder="Name (required)"/>
+                    </div>
+                    <div className="input-div">
+                        <input value={type} onChange={e => setType(e.target.value)} placeholder="Type (required)"/>
+                    </div>
+                    <div className="input-div">
+                        <input value={routine} onChange={e => setRoutine(e.target.value)} placeholder="Routine"/>
+                    </div>
+                    <div className="input-div">
+                        <input value={comment} onChange={e => setComment(e.target.value)} placeholder="Comment"/>
+                    </div>
+                    <LoaderButton
+                    block
+                    type="submit"
+                    bsSize="small"
+                    bsStyle="primary"
+                    isLoading={isLoading}
+                    disabled={!validateForm()}
+                    >
+                    Create
+                    </LoaderButton>
+                </form>
             </div>
         </div>
     );
