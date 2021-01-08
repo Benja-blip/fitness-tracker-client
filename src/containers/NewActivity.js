@@ -5,13 +5,13 @@ import { API } from "aws-amplify";
 
 export default function NewActivity(props) {
     const [title, setTitle] = useState("");
-    const [type, setType] = useState("");
-    const [comment, setComment] = useState("");
-    const [routine, setRoutine] = useState("");
+    const [activityType, setActivityType] = useState("");
+    const [activityComment, setActivityComment] = useState("");
+    const [activityRoutine, setActivityRoutine] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
     function validateForm() {
-        return title.length > 0 && type.length > 0;
+        return title.length > 0 && activityType.length > 0;
     }
 
     async function handleSubmit(event) {
@@ -20,11 +20,11 @@ export default function NewActivity(props) {
         setIsLoading(true);
 
         try {
-            await createActivity({ title, type, comment, routine });
+            await createActivity({ title, activityType, activityRoutine, activityComment });
             props.history.push("/");
             setIsLoading(false);
             setTitle("");
-            setType("");
+            setActivityType("");
         } catch(e) {
             console.log(e);
             setIsLoading(false);
@@ -45,13 +45,13 @@ export default function NewActivity(props) {
                         <input value={title} onChange={e => setTitle(e.target.value)} placeholder="Name (required)"/>
                     </div>
                     <div className="input-div">
-                        <input value={type} onChange={e => setType(e.target.value)} placeholder="Type (required)"/>
+                        <input value={activityType} onChange={e => setActivityType(e.target.value)} placeholder="Type (required)"/>
                     </div>
                     <div className="input-div">
-                        <input value={routine} onChange={e => setRoutine(e.target.value)} placeholder="Routine"/>
+                        <input value={activityRoutine} onChange={e => setActivityRoutine(e.target.value)} placeholder="Routine"/>
                     </div>
                     <div className="input-div">
-                        <input value={comment} onChange={e => setComment(e.target.value)} placeholder="Comment"/>
+                        <input value={activityComment} onChange={e => setActivityComment(e.target.value)} placeholder="Comment"/>
                     </div>
                     <LoaderButton
                     block

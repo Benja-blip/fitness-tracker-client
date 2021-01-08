@@ -18,7 +18,7 @@ export default function Routes({ appProps }) {
       <AppliedRoute path="/signup" exact component={Signup} appProps={appProps} />
       <AppliedRoute path="/activities/new" exact component={NewActivity} appProps={appProps} />
       <Route exact path="/activities/:id">
-        <Activities />
+        <Activities exact component={Activities} appProps={appProps} />
       </Route>
       <AppliedRoute path="/" exact component={ViewActivity} appProps={appProps} />
       <AppliedRoute path="/" exact component={TimeForm} appProps={appProps} />

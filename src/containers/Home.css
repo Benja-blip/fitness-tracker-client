@@ -53,10 +53,15 @@
     height: 9.5em;
     width: 50%;
     border-radius: 0.5em;
-    padding: .3em;
+    padding: 0em;
     margin-top: .1em;
     text-align: center;
     border: solid rgb(43, 42, 42) 0.2em;
+}
+
+#minutes p {
+    padding: .0em;
+    font-size: 6em;
 }
 
 #colon {
@@ -83,7 +88,7 @@
     height: 9.5em;
     width: 50%;
     border-radius: 0.5em;
-    padding: .3em;
+    padding: 0em;
     margin-top: .1em;
     margin-left: 1em;
     text-align: center;
