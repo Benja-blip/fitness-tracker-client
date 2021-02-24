@@ -10,9 +10,10 @@ html, body {
 }
 
 .App .navbar {
-  background-color: rgb(226, 2, 2);
+  background-color: rgb(172, 2, 2);
   border-radius: 0.5em;
   border: solid rgb(44, 44, 44);
+  width: 100%;
 }
 
 .App .navbar-brand {
@@ -28,5 +29,9 @@ html, body {
 #login {
   font-weight: bold;
   color: rgb(192, 189, 189);
+}
+
+.guest-container {
+  background-color: white;
 }
 

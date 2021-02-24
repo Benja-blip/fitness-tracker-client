@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import {
-  HelpBlock,
-  FormGroup,
-  FormControl,
-  ControlLabel
+  HelpBlock
 } from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton";
 import { useFormFields } from "../libs/hooksLib";
@@ -70,16 +67,14 @@ export default function Signup(props) {
   function renderConfirmationForm() {
     return (
       <form onSubmit={handleConfirmationSubmit}>
-        <FormGroup controlId="confirmationCode" bsSize="large">
-          <ControlLabel>Confirmation Code</ControlLabel>
-          <FormControl
+          <input
             autoFocus
+            placeholder="Confirmation code"
             type="tel"
             onChange={handleFieldChange}
             value={fields.confirmationCode}
           />
           <HelpBlock>Please check your email for the code.</HelpBlock>
-        </FormGroup>
         <LoaderButton
           block
           type="submit"
@@ -96,35 +91,30 @@ export default function Signup(props) {
   function renderForm() {
     return (
       <form onSubmit={handleSubmit}>
-        <FormGroup controlId="email" bsSize="large">
-          <ControlLabel>Email</ControlLabel>
-          <FormControl
+
+          <input
             autoFocus
+            placeholder="Email"
             type="email"
             value={fields.email}
             onChange={handleFieldChange}
           />
-        </FormGroup>
-        <FormGroup controlId="password" bsSize="large">
-          <ControlLabel>Password</ControlLabel>
-          <FormControl
+          <input
+            placeholder="Password"
             type="password"
             value={fields.password}
             onChange={handleFieldChange}
           />
-        </FormGroup>
-        <FormGroup controlId="confirmPassword" bsSize="large">
-          <ControlLabel>Confirm Password</ControlLabel>
-          <FormControl
+          <input
+            placeholder="Confirm password"
             type="password"
             onChange={handleFieldChange}
             value={fields.confirmPassword}
           />
-        </FormGroup>
         <LoaderButton
           block
           type="submit"
-          bsSize="large"
+          bsSize="small"
           isLoading={isLoading}
           disabled={!validateForm()}
         >

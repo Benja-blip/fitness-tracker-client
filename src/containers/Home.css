@@ -7,7 +7,7 @@
 }
 
 .Home .center-container {
-    background-color: rgb(226, 2, 2);
+    background-color: rgb(172, 2, 2);
     border-radius: 1em;
     width: 47%;
     margin: 0 auto;
@@ -16,7 +16,7 @@
 .Home .lander {
     margin: 2em auto;
     text-align: center;
-    background-color: rgb(226, 2, 2);
+    background-color: rgb(172, 2, 2);
     border-radius: 0.5em;
 }
 
@@ -141,7 +141,7 @@
 }
 
 .Home .right-container {
-    background-color: rgb(226, 2, 2);
+    background-color: rgb(172, 2, 2);
     border-radius: 1em;
     width: 25%;
 }
@@ -173,7 +173,7 @@
 }
 
 .Home .left-container {
-    background-color: rgb(226, 2, 2);
+    background-color: rgb(172, 2, 2);
     border-radius: 1em;
     width: 25%;
 }

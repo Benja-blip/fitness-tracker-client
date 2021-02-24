@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Auth } from "aws-amplify";
-import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton";
 import { useFormFields } from "../libs/hooksLib";
 import "./Login.css";
@@ -34,27 +33,23 @@ export default function Login(props) {
     return(
         <div className="Login">
             <form onSubmit={handleSubmit}>
-                <FormGroup controlId="email" bsSize="large">
-                    <ControlLabel>Email</ControlLabel>
-                    <FormControl
-                      autoFocus
-                      type="email"
-                      value={fields.email}
-                      onChange={handleFieldChange}
-                    />
-                </FormGroup>
-                <FormGroup controlId="password" bsSize="large">
-                    <ControlLabel>Password</ControlLabel>
-                    <FormControl
-                      value={fields.password}
-                      onChange={handleFieldChange}
-                      type="password"
-                    />
-                </FormGroup>
+                <input
+                    autoFocus
+                    placeholder="Email"
+                    type="email"
+                    value={fields.email}
+                    onChange={handleFieldChange}
+                />
+                <input
+                    placeholder="Password"
+                    value={fields.password}
+                    onChange={handleFieldChange}
+                    type="password"
+                />
                 <LoaderButton
                   block
                   type="submit"
-                  bsSize="large"
+                  bsSize="small"
                   isLoading={isLoading}
                   disabled={!validateForm()}
                 >

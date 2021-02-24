@@ -5,10 +5,19 @@ import { LinkContainer } from "react-router-bootstrap";
 import './App.css';
 import Routes from "./Routes";
 import { Auth } from "aws-amplify";
+// import Toggle from './components/Toggle';
+// import NewActivity from './containers/NewActivity';
+// import ViewActivity from "./containers/ViewActivity";
+// import TimeForm from "./containers/TimeForm";
+// import Timer from "./components/Timer";
+// import ActivityDisplay from "./components/ActivityDisplay"
+// import {startCountdown, resetCountdown} from "./components/Actions";
+// import {useDispatch} from "react-redux";
 
 function App(props) {
   const [isAuthenticating, setIsAuthenticating] = useState(true);
   const [isAuthenticated, userHasAuthenticated] = useState(false);
+  // const dispatch = useDispatch();
 
   useEffect(() => {
     onLoad();

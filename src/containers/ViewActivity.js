@@ -4,35 +4,49 @@ import { API } from 'aws-amplify';
 import Toggle from '../components/Toggle';
 import "./ViewActivity.css";
 import Activities from "./Activities";
+import {connect} from "react-redux";
 
-export default function ViewActivity(props) {
+const ViewActivity = (props) => {
     const [activities, setActivities] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [message, setMessage] = useState("")
 
     useEffect(() => {
-        if (isLoading) {
+        if (props.isAuthenticated && isLoading) {
             setMessage("Loading...")
         }
-    }, [isLoading])
+    }, [isLoading, props.isAuthenticated])
 
     useEffect(() => {
         async function onload() {
             if(!props.isAuthenticated) {
+                setIsLoading(true);
+                const activities = props.activities;
+                const noActivities = activities.length === 0;
+                console.log("Activities length: ", activities.length)
+                if(noActivities) {
+                    setIsLoading(true);
+                    setMessage("No activities created yet.")
+                } else {
+                    setActivities(activities);
+                    setIsLoading(false);
+                }
                 return;
-            }
-            try {
-                setIsLoading(true)
-                const activities = await loadActivities();
-                setActivities(activities);
-                setIsLoading(false);
-            } catch(e) {
-                console.log(e);
+            } else {
+                try {
+                    setIsLoading(true)
+                    const activities = await loadActivities();
+                    setActivities(activities);
+                    setIsLoading(false);
+                } catch(e) {
+                    console.log(e);
+                    setIsLoading(false);
+                }
             }
         }
 
         onload();
-    }, [props.isAuthenticated]);
+    }, [props.isAuthenticated, props.activities]);
 
     function loadActivities() {
         return API.get("activities", "/activities");
@@ -55,7 +69,13 @@ export default function ViewActivity(props) {
                                     </div>
                                     {"Comment: " + activity.activityComment}
                                 </button>
-                                {on && <Activities activityId = {activity.activityId} {...props}/>}
+                                {on && <Activities 
+                                activityId = {activity.activityId}
+                                title = {activity.title}
+                                activityType = {activity.activityType}
+                                activityRoutine = {activity.activityRoutine}
+                                activityComment = {activity.activityComment} 
+                                {...props}/>}
                             </div>
                         )}
                     </Toggle>
@@ -66,12 +86,20 @@ export default function ViewActivity(props) {
 
     return (
         <div className="activities">
-            {isLoading && message}
+            {props.isAuthenticated ? message : message}
             <div className="list-container">
                 <div id="actual-list">
-                    {props.isAuthenticated && renderActivitiesList(activities)}
+                    {renderActivitiesList(activities)}
                 </div>
             </div>
         </div>
     );
 }
+
+const mapStateToProps = state => {
+    return {
+        activities: state.activitiesList.activities
+    };
+};
+
+export default connect(mapStateToProps)(ViewActivity);

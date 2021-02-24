@@ -53,3 +53,21 @@ export function autoTransitionOn(state = true, action) {
             return state;
     }
 }
+
+export function toggleActivities(state = false, action) {
+    switch(action.type) {
+        case 'TOGGLE_VIEW':
+            return !state;
+        default:
+            return state;
+    }
+}
+
+export function toggleEditActivities(state = false, action) {
+    switch(action.type) {
+        case 'TOGGLE_EDIT':
+            return !state;
+        default:
+            return state;
+    }
+}

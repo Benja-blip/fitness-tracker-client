@@ -45,3 +45,15 @@ export function autoTransitionOn() {
         type: 'AUTO_IS_ON'
     }
 }
+
+export function toggleActivities() {
+    return {
+        type: 'TOGGLE_VIEW'
+    }
+}
+
+export function toggleEditActivities() {
+    return {
+        type: 'TOGGLE_EDIT'
+    }
+}
