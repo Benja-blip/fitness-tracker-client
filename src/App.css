@@ -5,20 +5,29 @@
 html, body {
   height: 100%;
   width: 100%;
-  background-color: rgb(27, 27, 27);
+  background-color: rgb(37, 37, 37);
   opacity: 1.0;
 }
 
 .App .navbar {
-  background-color: rgb(172, 2, 2);
-  border-radius: 0.5em;
-  border: solid rgb(44, 44, 44);
-  width: 100%;
+  background-color: rgb(32, 32, 32);
+  border-right: 0.15em solid rgba(253, 3, 3, 0.842);
+  border-left: hidden;
+  border-top: hidden;
+  border-bottom: 0.15em solid rgba(253, 3, 3, 0.842);;
+  box-sizing: border-box;
+  border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  width: 96.5%;
+  height: 55%;
+  margin-left: 2em;
+  margin-top: 0.5em;
 }
 
 .App .navbar-brand {
   font-weight: bold;
-  color: rgb(44, 43, 43);
+  color: rgb(189, 186, 186);
 }
 
 #signup {
