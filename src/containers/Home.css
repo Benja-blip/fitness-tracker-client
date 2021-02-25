@@ -69,7 +69,7 @@
     width: 50%;
     border-radius: 0.5em;
     padding: 0em;
-    margin-top: .1em;
+    margin-top: .2em;
     text-align: center;
     border-right: 0.15em solid rgba(253, 3, 3, 0.842);
     border-left: hidden;
@@ -88,14 +88,14 @@
     height: 9.5em;
     width: 0.5em;
     border-radius: 0.5em;
-    padding: 0.0em;
+    padding-bottom: 10em;
     margin-top: .1em;
     margin: auto;
     text-align: left;
 }
 
 #colon p {
-    color: rgb(22, 22, 22);
+    color: rgb(236, 233, 233);
     opacity: 0.9;
     font-size: 6em;
 }
@@ -107,7 +107,7 @@
     width: 50%;
     border-radius: 0.5em;
     padding: 0em;
-    margin-top: .1em;
+    margin-top: .2em;
     margin-left: 1em;
     margin-right: 2em;
     text-align: center;
